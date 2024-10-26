@@ -1,0 +1,10 @@
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+class SmartCardBalanceTest {
+
+    @Test
+    void shouldReturnCorrectBalance() {
+        SmartCard card = new SmartCard(100);  // Assume balance is 100
+        assertEquals(100, card.getBalance());
+    } }
