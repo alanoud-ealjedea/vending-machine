@@ -7,4 +7,16 @@ class SmartCardBalanceTest {
     void shouldReturnCorrectBalance() {
         SmartCard card = new SmartCard(100);  // Assume balance is 100
         assertEquals(100, card.getBalance());
+    } 
+
+    @Test
+    void shouldHandleZeroBalance() {
+        SmartCard card = new SmartCard(0.00);  // Balance is zero
+        assertEquals(0.00, card.getBalance());
+    }
+
+    @Test
+    void shouldThrowExceptionForUnreadableCard() {
+        SmartCard card = new SmartCard(-1);  // Simulate unreadable card with invalid balance
+        assertThrows(UnreadableCardException.class, card::getBalance);
     } }
