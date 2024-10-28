@@ -1,0 +1,15 @@
+public class SmartCard {
+
+    private double balance;
+
+    public SmartCard(double balance) {
+        this.balance = balance;
+    }
+
+    public double getBalance() throws UnreadableCardException {
+        if (balance < 0) {
+            throw new UnreadableCardException("Card is unreadable.");
+        }
+        return balance;
+    }
+}
